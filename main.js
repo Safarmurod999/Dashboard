@@ -1,9 +1,6 @@
 import renderUser from './src/render.js';
 import get from './src/getElement.js';
 import fetchApi from './src/fetchApi.js';
-import renderUser from './src/render.js';
-import get from './src/getElement.js';
-import fetchApi from './src/fetchApi.js';
 
 const userUrl = "https://jsonplaceholder.typicode.com/users";
 
