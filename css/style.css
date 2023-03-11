@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+}
+
+input, select {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 !important;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 255px;
+  padding: 37px 0 !important;
+  background-color: #363740;
+}
+.dashboard__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 83px;
+  padding: 0 32px;
+}
+.dashboard__logo img {
+  margin-right: 12px;
+}
+.dashboard__logo span {
+  font: 700 19px "Mulish", sans-serif !important;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  color: #A4A6B3;
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+}
+.dashboard__logo span:hover {
+  color: #DDE2FF;
+}
+.dashboard .nav {
+  width: 100%;
+}
+.dashboard .nav li {
+  width: 100%;
+  padding: 18px 32px;
+  border-left: 3px solid #363740;
+}
+.dashboard .nav li:hover {
+  background-color: rgba(159, 162, 180, 0.08);
+  border-left: 3px solid #DDE2FF;
+}
+.dashboard .nav li:hover .nav-link {
+  color: #DDE2FF;
+  font-size: 15px;
+}
+.dashboard .nav li:hover .nav-link i {
+  font-size: 15px;
+}
+.dashboard .nav .nav-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 24px;
+  padding: 0;
+  color: #A4A6B3;
+  transition: 0.4s ease;
+}
+.dashboard #menu {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(219, 225, 255, 0.08);
+}
+.dashboard #menu2 {
+  padding-top: 18px;
+}
+
+.dash-table {
+  flex-grow: 1;
+  padding: 36px 30px !important;
+}
+.dash-table__nav {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.dash-table__nav h2 {
+  font-family: 700 24px "Mulish";
+  font-style: normal;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  color: #252733;
+}
+.dash-table__nav__left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.dash-table__nav__left-icons {
+  height: 38px;
+  padding-right: 32px;
+  border-right: 3px solid #DDE2FF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.dash-table__nav__left-icons i {
+  color: #C5C7CD;
+  font-size: 15px;
+}
+.dash-table__nav__left-profile {
+  padding-left: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.dash-table__nav__left-profile h5 {
+  color: #252733;
+}
+.dash-table-body {
+  width: 100%;
+  margin-top: 58px;
+  padding: 32px !important;
+  border: 1px solid #DFE0EB;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dash-table-body-top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.dash-table-body-top h6 {
+  font: 400 14px "Mulish", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #252733;
+  margin-bottom: 0;
+}
+.dash-table-body-top div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+.dash-table-body-top div button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.dash-table-body-top div button span {
+  font: 400 14px "Mulish", sans-serif;
+  line-height: 20px;
+  margin-left: 9px;
+}
+.dash-table-body-top div button i {
+  color: #C5C7CD;
+}
+.dash-table-body .table {
+  margin-top: 40px;
+}
+.dash-table-body .table th {
+  font: 600 14px "Mulish", sans-serif;
+  font-weight: 700;
+  padding: 12px 0 !important;
+}
+.dash-table-body .table th[scope=row] {
+  padding: 24px 0 !important;
+}
+.dash-table-body .table th[scope=row] div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 24px !important;
+}
+.dash-table-body .table th[scope=row] div h4, .dash-table-body .table th[scope=row] div p {
+  margin-bottom: 0;
+}
+.dash-table-body .table th[scope=row] div h4 {
+  font: 600 14px "Mulish", sans-serif;
+}
+.dash-table-body .table th[scope=row] div p {
+  font: 400 12px "Mulixh", sans-serif;
+  color: #C5C7CD;
+  line-height: 25px;
+}
+.dash-table-body .table td {
+  padding: 24px 0 !important;
+}
+.dash-table-body .table td p {
+  margin-bottom: 0;
+}
+.dash-table-body .table td p {
+  font: 400 12px "Mulixh", sans-serif;
+  line-height: 16px;
+  color: #A4A6B3;
+}
+.dash-table-body .table td button {
+  background-color: transparent;
+}
+.dash-table-body .table td i {
+  font-size: 25px;
+  color: #C5C7CD;
+}
+.dash-table-body .table td i:hover {
+  color: #252733;
+}
+.dash-table-body .table td div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gradient-custom {
+  background: #6a11cb;
+  background: -webkit-linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
+  background: linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
+}
+
+/*# sourceMappingURL=style.css.map */
