@@ -211,9 +211,12 @@
                     @include mixin.flex-box(row,space-between, center);
                     a{
                         width: 100%;
-                        padding: 0 !important;
+                        // padding: 0 !important;
                         @include mixin.flex-box(row,space-between, center);
                     }
+                }
+                #dropdownMenuLink{
+                    padding: 0;
                 }
             }
         }
