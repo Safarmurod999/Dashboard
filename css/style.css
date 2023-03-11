@@ -257,4 +257,12 @@ a {
   background: linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
 }
 
+.dropdown .dropdown-toggle {
+  border: none;
+  background-color: transparent !important;
+}
+.dropdown .dropdown-toggle::after {
+  display: none !important;
+}
+
 /*# sourceMappingURL=style.css.map */
