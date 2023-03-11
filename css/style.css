@@ -245,6 +245,17 @@ a {
 }
 .dash-table-body .table td div {
   width: 100%;
+}
+.dash-table-body .table td .dropdown {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.dash-table-body .table td .dropdown a {
+  width: 100%;
+  padding: 0 !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -255,6 +266,14 @@ a {
   background: #6a11cb;
   background: -webkit-linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
   background: linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
+}
+
+.dropdown .dropdown-toggle {
+  border: none;
+  background-color: transparent !important;
+}
+.dropdown .dropdown-toggle::after {
+  display: none !important;
 }
 
 /*# sourceMappingURL=style.css.map */

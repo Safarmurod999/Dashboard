@@ -204,7 +204,16 @@
                 }
                 div{
                     width: 100%;
+
+                }
+                .dropdown{
+                    width: 100%;
                     @include mixin.flex-box(row,space-between, center);
+                    a{
+                        width: 100%;
+                        padding: 0 !important;
+                        @include mixin.flex-box(row,space-between, center);
+                    }
                 }
             }
         }
