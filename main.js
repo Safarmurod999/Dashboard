@@ -6,8 +6,6 @@ const userUrl = "https://jsonplaceholder.typicode.com/users";
 const sortValue = document.querySelectorAll('#dropdown1 ul li');
 const filterValue = document.querySelectorAll('#dropdown2 ul li');
 
-console.log(filterValue);
-console.log(sortValue);
 const dashBody = get('#dash-body');
 
 let priority = [
@@ -112,9 +110,9 @@ async function sortNameDown() {
     });
 }
 
-filterValue.forEach(el=>{
-    el.addEventListener('click',async (e)=>{
-        let prior=e.target.innerHTML.toLowerCase();
+filterValue.forEach(el => {
+    el.addEventListener('click', async (e) => {
+        let prior = e.target.innerHTML.toLowerCase();
         let data = await fetchApi(userUrl);
         data.pop();
         data.pop();
@@ -166,18 +164,16 @@ filterValue.forEach(el=>{
 sortValue[0].addEventListener('click', sortNameUp);
 sortValue[1].addEventListener('click', sortNameDown);
 
-const searchInput=get('.search-input');
-const searchBtn=get('.search-btn');
+const searchInput = get('.search-input');
+const searchBtn = get('.search-btn');
 
-searchBtn.addEventListener('click',async (e)=>{
+searchBtn.addEventListener('click', async (e) => {
+    dashBody.innerHTML = "";
     let data = await fetchApi(userUrl);
     data.pop();
     data.pop();
-    for (let i = 0; i < data.length; i++) {
-        data[i].priority = priority[i];
-    }
     let sorted = data.filter(el => el.name.match(searchInput.value));
-    dashBody.innerHTML = "";
+    console.log(sorted);
     sorted.forEach(el => {
         dashBody.innerHTML += `
                 <tr>
