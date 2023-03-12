@@ -33,6 +33,7 @@ a {
   justify-content: start;
   align-items: center;
   width: 255px;
+  min-height: 100vh;
   padding: 37px 0 !important;
   background-color: #363740;
 }
@@ -95,9 +96,24 @@ a {
   padding-top: 18px;
 }
 
+.gradient-custom {
+  background: #6a11cb;
+  background: -webkit-linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
+  background: linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
+}
+
+.dropdown .dropdown-toggle {
+  border: none;
+  background-color: transparent !important;
+}
+.dropdown .dropdown-toggle::after {
+  display: none !important;
+}
+
 .dash-table {
   flex-grow: 1;
   padding: 36px 30px !important;
+  padding-bottom: 0 !important;
 }
 .dash-table__nav {
   height: 100%;
@@ -263,19 +279,35 @@ a {
 .dash-table-body .table td #dropdownMenuLink {
   padding: 0;
 }
-
-.gradient-custom {
-  background: #6a11cb;
-  background: -webkit-linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
-  background: linear-gradient(to right, rgb(106, 17, 203), rgb(37, 117, 252));
+.dash-table .pagination {
+  width: 100%;
+  gap: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
 }
-
-.dropdown .dropdown-toggle {
-  border: none;
-  background-color: transparent !important;
+.dash-table .pagination button, .dash-table .pagination span {
+  padding: 0 !important;
+  color: #A4A6B3;
 }
-.dropdown .dropdown-toggle::after {
-  display: none !important;
+.dash-table .pagination button:hover, .dash-table .pagination span:hover {
+  color: #252733;
+}
+.dash-table .pagination p {
+  color: #A4A6B3;
+  margin: 0;
+  padding-left: 18px;
+}
+.dash-table .pagination p:hover {
+  color: #252733;
+}
+.dash-table .pagination i {
+  font-size: 25px;
+  color: #C5C7CD;
+}
+.dash-table .pagination i:hover {
+  color: #252733;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,7 +3,11 @@ import get from './src/getElement.js';
 import fetchApi from './src/fetchApi.js';
 
 const userUrl = "https://jsonplaceholder.typicode.com/users";
+const sortValue = document.querySelectorAll('#dropdown1 ul li');
+const filterValue = document.querySelectorAll('#dropdown2 ul li');
 
+console.log(filterValue);
+console.log(sortValue);
 const dashBody = get('#dash-body');
 
 let priority = [
@@ -108,18 +112,6 @@ async function sortNameDown() {
     });
 }
 
-async function filterHigh(priority) {
-  
-}
-
-const sortValue = document.querySelectorAll('#dropdown1 ul li');
-const filterValue = document.querySelectorAll('#dropdown2 ul li');
-
-console.log(filterValue);
-console.log(sortValue);
-
-// filterValue[0].addEventListener('click',filterHigh)
-
 filterValue.forEach(el=>{
     el.addEventListener('click',async (e)=>{
         let prior=e.target.innerHTML.toLowerCase();
@@ -173,3 +165,54 @@ filterValue.forEach(el=>{
 
 sortValue[0].addEventListener('click', sortNameUp);
 sortValue[1].addEventListener('click', sortNameDown);
+
+const searchInput=get('.search-input');
+const searchBtn=get('.search-btn');
+
+searchBtn.addEventListener('click',async (e)=>{
+    let data = await fetchApi(userUrl);
+    data.pop();
+    data.pop();
+    for (let i = 0; i < data.length; i++) {
+        data[i].priority = priority[i];
+    }
+    let sorted = data.filter(el => el.name.match(searchInput.value));
+    dashBody.innerHTML = "";
+    sorted.forEach(el => {
+        dashBody.innerHTML += `
+                <tr>
+                <th scope="row">
+                    <div>
+                        <img src="images/${el.id}.png" alt="...">
+                        <h4>${el.email}<br>
+                            <p>Updated 1 day ago</p>
+                        </h4>
+                    </div>
+                </th>
+                <td>${el.name} <br>
+                    <p>on 24.05.2019</p>
+                </td>
+                <td>May 26, 2019 <br>
+                    <p>6:30 PM</p>
+                </td>
+                <td>
+                    <div>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button><i class="uil uil-bookmark-full"></i></button><button><i
+                                        class="uil uil-ellipsis-v"></i></button>
+                            </a>
+            
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">High</a></li>
+                                <li><a class="dropdown-item" href="#">Low</a></li>
+                                <li><a class="dropdown-item" href="#">Normal</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>`;
+    });
+});
+

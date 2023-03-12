@@ -4,6 +4,7 @@
 .dashboard {
     @include mixin.flex-box(column, start, center);
     width: 255px;
+    min-height: 100vh;
     padding: 37px 0 !important;
     background-color: var.$gray;
 
@@ -11,8 +12,6 @@
         @include mixin.flex-box(row, center, center);
         margin-bottom: 83px;
         padding: 0 32px;
-
-
         img {
             margin-right: 12px;
         }
@@ -39,7 +38,6 @@
             width: 100%;
             padding: 18px 32px;
             border-left: 3px solid var.$gray;
-
             &:hover {
                 background-color: rgba(159, 162, 180, 0.08);
                 border-left: 3px solid #DDE2FF;
@@ -74,151 +72,3 @@
     }
 }
 
-.dash-table {
-    flex-grow: 1;
-    padding: 36px 30px !important;
-
-    &__nav {
-        height: 100%;
-        @include mixin.flex-box(row, space-between, center);
-
-        h2 {
-            font-family: 700 24px'Mulish';
-            font-style: normal;
-            line-height: 30px;
-            letter-spacing: 0.3px;
-            color: #252733;
-        }
-
-        width: 100%;
-
-        &__left {
-            @include mixin.flex-box(row, center, center);
-
-            &-icons {
-                height: 38px;
-                padding-right: 32px;
-                border-right: 3px solid #DDE2FF;
-                @include mixin.flex-box(row, center, center);
-                gap: 24px;
-
-                i {
-                    color: #C5C7CD;
-                    font-size: 15px;
-                }
-            }
-
-            &-profile {
-                padding-left: 32px;
-                @include mixin.flex-box(row, center, center);
-                gap: 24px;
-
-                h5 {
-                    color: #252733;
-                }
-            }
-        }
-    }
-
-    &-body {
-        width: 100%;
-        margin-top: 58px;
-        padding: 32px !important;
-        border: 1px solid #DFE0EB;
-        border-radius: 8px;
-        @include mixin.flex-box(column, center, center);
-
-        &-top {
-            width: 100%;
-            @include mixin.flex-box(row, space-between, center);
-
-            h6 {
-                font: var.$font-2;
-                font-size: 19px;
-                font-weight: 700;
-                line-height: 24px;
-                color: #252733;
-                margin-bottom: 0;
-            }
-            div{
-                @include mixin.flex-box(row, center, center);
-                gap: 32px;
-                button{
-                    @include mixin.flex-box(row, center, center);
-                    background-color: transparent;
-                    span{
-                        font: var.$font-2;
-                        line-height: 20px;
-                        margin-left: 9px;
-                    }
-                    i{
-                        color: #C5C7CD;
-                    }
-                }
-            }
-        }
-        .table{
-            margin-top: 40px;
-            th{
-                font: var.$font;
-                font-weight: 700;
-                padding: 12px 0 !important;
-            }
-            th[scope="row"]{
-                padding: 24px 0 !important;
-                div{
-                    @include mixin.flex-box(row, start, center);
-                    gap: 24px !important;
-                    h4,p{
-                        margin-bottom: 0;
-                    }
-                    h4{
-                        font: var.$font;
-                    }
-                    p{
-                        font: var.$font-3;
-                        color: #C5C7CD;
-                        line-height: 25px;
-                    }
-                }
-            }
-            td{
-                padding: 24px 0 !important;
-                p{
-                    margin-bottom: 0;
-                }
-                p{
-                    font: var.$font-3;
-                    line-height: 16px;
-                    color: var.$ll-gray;
-                }
-                button{
-                    background-color: transparent;
-                }
-                i{
-                    font-size: 25px;
-                    color: #C5C7CD;
-                    &:hover{
-                        color: #252733;
-                    }
-                }
-                div{
-                    width: 100%;
-
-                }
-                .dropdown{
-                    width: 100%;
-                    @include mixin.flex-box(row,space-between, center);
-                    a{
-                        width: 100%;
-                        // padding: 0 !important;
-                        @include mixin.flex-box(row,space-between, center);
-                    }
-                }
-                #dropdownMenuLink{
-                    padding: 0;
-                }
-            }
-        }
-    }
-}
